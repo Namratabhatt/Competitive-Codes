@@ -1,10 +1,10 @@
 #include<bits/stdc++.h>
 #include<iostream>
-#define ll long long int
+#define ll unsigned long long int
 using namespace std;
 
 
-ll exp_pow(ll x, unsigned ll y, ll p) 
+ll exp_pow(ll x, ll y, ll p) 
 { 
     ll res = 1;      // Initialize result 
   
@@ -57,7 +57,7 @@ int miller_rabin(ll number){
 
 int main(){
 
-    // freopen("input0.in","r",stdin);
+    freopen("testfile_input0.in","r",stdin);
     // freopen("output0.in","w",stdout);
     int N;
     cin>>N;
@@ -83,15 +83,15 @@ int main(){
         countright++;
         }
     }
-    //cout<<countleft<<" "<<countright<<" "<<maxleft<<" "<<maxright<<endl;
+    cout<<countleft<<" "<<countright<<" "<<maxleft<<" "<<maxright<<endl;
     if(countleft == countright && maxleft>maxright)
     cout<<"PERFECT"<<endl;
     else
     cout<<"IMPERFECT"<<endl;
 
-    // for(int i = 0;i<N;i++){
-    //     cout<<miller_rabin(array[i])<<" "<<array[i]<<endl;
-    // }
+    for(int i = 0;i<N;i++){
+        cout<<miller_rabin(array[i])<<" "<<array[i]<<endl;
+    }
     return 0;
 }
 
