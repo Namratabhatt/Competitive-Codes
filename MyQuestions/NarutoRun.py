@@ -16,13 +16,32 @@ MOD = pow(10,9)+7
 N = int_input()
 
 tree = {}
+height = [0]*N
 
-for i in range(N):
+def dfs(tree,node,parent,level):
+    #print("We are at node",node,"which is at level",level)
+    height[level]+= len(tree[node])-1
+    for children in tree[node]:
+        if children!=parent:
+            dfs(tree,children,node,level+1)
+
+for i in range(N+1):
     tree[i] = []
-
+tree[1].append(0)
 for i in range(N-1):
     x,y = multi_int_input()
-    tree[x] = y
-    tree[y] = x
+    tree[x].append(y)
+    tree[y].append(x)
 
-print(tree)
+if len(tree) == 1:
+    print(1)
+else:
+    dfs(tree,1,0,1)
+
+
+maximum = max(height)
+
+for i in range(0,len(height)):
+    if height[i] == maximum:
+        print(i+1)
+        break
