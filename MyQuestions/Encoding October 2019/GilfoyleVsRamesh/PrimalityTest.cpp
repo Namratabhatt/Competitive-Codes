@@ -53,15 +53,41 @@ bool miller_rabin(ULL p, int it){
 }
 
 int main(){
-    freopen("input.in","r",stdin);
-    int T;
-    unsigned long long N;
-    scanf("%d",&T);
-    
-    while(T--){
-        scanf("%llu",&N);
-        printf("%s\n",miller_rabin(N,18)? "YES" : "NO");
+
+    //freopen("input0.in","r",stdin);
+    // freopen("output0.in","w",stdout);
+    int N;
+    cin>>N;
+    ULL array[N];
+    for(int i = 0;i<N;i++){
+        cin>>array[i];
     }
-    
+
+    int countleft,countright;
+    ULL maxleft,maxright;
+    countleft = 0,countright = 0;
+    maxleft = -2,maxright = -2;
+
+    for( int i = 0;i<N/2;i++){
+        if (miller_rabin(array[i],18) == true){
+            if(maxleft ==-2)maxleft=array[i];
+            countleft++;
+        }
+    }
+    for(int i = N/2;i<N;i++){
+        if (miller_rabin(array[i],18) == true){
+        maxright = array[i];
+        countright++;
+        }
+    }
+    //cout<<countleft<<" "<<countright<<" "<<maxleft<<" "<<maxright<<endl;
+    if(countleft == countright && maxleft>maxright)
+    cout<<"PERFECT"<<endl;
+    else
+    cout<<"IMPERFECT"<<endl;
+
+    // for(int i = 0;i<N;i++){
+    //     cout<<miller_rabin(array[i],18)<<" "<<array[i]<<endl;
+    // }
     return 0;
 }
