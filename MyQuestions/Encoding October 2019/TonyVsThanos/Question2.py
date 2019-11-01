@@ -5,6 +5,7 @@ from bisect import bisect_left, bisect_right
 from copy import deepcopy
 #from random import randint
 import sys
+import os
 
 int_input=lambda : int(stdin.readline())
 string_input=lambda : stdin.readline()
@@ -19,6 +20,8 @@ MOD = pow(10,9)+7
 #     stdin = open('testfile_input'+str(i)+'.in','r')
 #     sys.stdout = open('testfile_output'+str(i)+'.in','w')
 
+# stdin = open(os.path.join(sys.path[0],'testfile_input5.in'),'r')
+# sys.stdout = open(os.path.join(sys.path[0],'testfile_output5.in'),'w')
 #solution
 test  = int_input()
 
