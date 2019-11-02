@@ -18,14 +18,16 @@ EASY
 The trick to solving this within the given constraints is to use a dequeue and keep track of the elements inside the array/list using a dictionary/map.
 Take a dequeue Li and each time Tony tries to enter a number check if we can enter the number or not and then do a push_right and in order to remove one of his element do a remove_front.  Do a push_left and remove_back in case of Thanos.
 In order to see if an element can be entered in Li or not check:
-1. If its aldready there in Li
-2. If the list is full, 
-    * Check if the other person has got some elements to remove. 
-    * If the other person has no elements to remove we cannot enter the element. 
+1. If its aldready there in Li. If it is not present then,
+    * If the list is full, 
+        * Check if the other person has got some elements to remove. If he has you can enter the new elements y removing his last entered element from Li.
+        * If the other person has no elements to remove we cannot enter the element. 
+    * If list is not full, enter the elements
 
 # SOLUTIONS:
 
 [details="Setter's Solution"]
+    
     from collections import deque
 
     test  = int(input())
@@ -82,6 +84,7 @@ In order to see if an element can be entered in Li or not check:
 [/details]
 
 [details="Tester's Solution"]
+    
     #include "bits/stdc++.h"
     using namespace std;
     
