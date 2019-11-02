@@ -23,53 +23,54 @@ MOD = pow(10,9)+7
 # stdin = open(os.path.join(sys.path[0],'testfile_input5.in'),'r')
 # sys.stdout = open(os.path.join(sys.path[0],'testfile_output5.in'),'w')
 #solution
-test  = int_input()
+
+from collections import deque
+
+test  = int(input())
 
 for _ in range(test): 
     tony = []
     thanos = []
-    n,k = multi_int_input()
+    n,k = map(int,input().split())
     #print(n,k)
-    tony = list_input()
-    thanos = list_input()
+    tony = [int(x) for x in input().split()]
+    thanos = [int(x) for x in input().split()]
 
     list_numbers = []
-    count_list = []
     li = deque(list_numbers)
-    count_list = deque(count_list)
 
     present_elements = {}
+
+    no_tony = 0 
+    no_thanos = 0
     
     for i in range(0,n):
         #Tony's turn 
-        if tony[i] not in present_elements or present_elements[tony[i]] == 0:
-            if len(li) == k:
+        if (tony[i] not in present_elements or present_elements[tony[i]] == 0):
+            if len(li) == k and no_thanos>0:
                 x = li.popleft()
                 present_elements[x] = 0
-                count_list.popleft()  
-            li.append(tony[i])
-            count_list.append(1)
-            present_elements[tony[i]] = 1
-        
+                no_thanos-=1
+            if(len(li)<k):
+                li.append(tony[i])
+                no_tony+=1
+                present_elements[tony[i]] = 1
+            
         #Thanos's turn
-        if thanos[i] not in present_elements or present_elements[thanos[i]] == 0:
-            if len(li) == k:
+        if (thanos[i] not in present_elements or present_elements[thanos[i]] == 0):
+            if len(li) == k and no_tony>0:
                 x = li.pop()
                 present_elements[x] = 0
-                count_list.pop()  
-            li.appendleft(thanos[i])
-            count_list.appendleft(0)
-            present_elements[thanos[i]] = 1
-    
-    no_tony = 0 
-    no_thanos = 0
+                no_tony-=1
+            if(len(li)<k):
+                li.appendleft(thanos[i])
+                no_thanos+=1
+                present_elements[thanos[i]] = 1
+            
+        # print(li)
+        # print(present_elements)
+        # print(count_list)
 
-    for i in count_list:
-        if i == 1:
-            no_tony+=1
-        elif i == 0:
-            no_thanos+=1
-    
     if no_tony>no_thanos:
         print('TONY')
     elif no_tony<no_thanos:
