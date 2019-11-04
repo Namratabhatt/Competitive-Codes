@@ -5,6 +5,7 @@ from bisect import bisect_left, bisect_right
 from copy import deepcopy
 import os
 import sys
+from math import pow
 int_input=lambda : int(stdin.readline())
 string_input=lambda : stdin.readline()
 multi_int_input =lambda : map(int, stdin.readline().split())
