@@ -28,11 +28,20 @@ for events in a:
     
     count+=1
 
-    if events<0 and (-1*events) not in present:
-        print(-1)
-        flag = 1
-        break
-    elif events>0 and events not in present:
+    if events<0:
+        if (-1*events) not in present:
+            print(-1)
+            flag = 1
+            break
+        else:
+            present.remove(-1*events)
+
+        if len(present) == 0:
+            final.append(count)
+            aldready = set([])
+            count = 0
+
+    elif events>0:
         if events not in aldready:
             present.add(events)
             aldready.add(events)
@@ -40,14 +49,6 @@ for events in a:
             print(-1)
             flag = 1
             break
-    elif events<0 and (-1*events) in present:
-        present.remove(-1*events)
-        #print("Herer")
-    if len(present) == 0:
-        final.append(count)
-        aldready = set([])
-        count = 0
-    #print(present)
 
 if flag == 0:
     if len(present) == 0:
