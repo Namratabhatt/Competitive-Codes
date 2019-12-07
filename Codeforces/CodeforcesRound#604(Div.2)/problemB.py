@@ -33,4 +33,6 @@ for _ in range(test):
         else:
             result.append(0)
         
-    print(*result)
+    for elements in result:
+        print(elements,end = "")
+    print()
