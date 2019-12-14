@@ -27,8 +27,6 @@ for _ in range(test):
         first_digit = int(string_no[0])
         maximum = str(first_digit)*length_no
         maximum = int(maximum)
-        
-        
         if maximum<=n:
             print(arr[length_no-2]+first_digit)
         else:
