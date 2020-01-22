@@ -22,16 +22,16 @@ import os,sys
 
 sys.setrecursionlimit(10000)
 
-stdin = open(os.path.join(sys.path[0],'input1.in'),'r')
-sys.stdout = open(os.path.join(sys.path[0],'output1.in'),'w+')
+stdin = open(os.path.join(sys.path[0],'input4.in'),'r')
+sys.stdout = open(os.path.join(sys.path[0],'output4.in'),'w+')
 
 def isConcatenated(hashset,number,index):
 
     word = number[index:]
     for i in range(1,len(word)):
         if word[:i] in hashset:
-            rightstr = word[i:]
-            if rightstr in hashset or isConcatenated(hashset,number,index+i):
+            
+            if word[i:] in hashset or isConcatenated(hashset,number,index+i):
                 return True
     return False
 

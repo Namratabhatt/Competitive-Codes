@@ -18,11 +18,7 @@ class Solution{
                 concatenated.add(word);
         }
 
-        Collections.sort(concatenated);
-
-        for(int i = 0;i<concatenated.size();i++){
-            System.out.print(concatenated.get(i)+" ");
-        }
+        System.out.println(concatenated.size());
     }
 
     public static boolean isConcatenated(Set<String> hashset, String word){
