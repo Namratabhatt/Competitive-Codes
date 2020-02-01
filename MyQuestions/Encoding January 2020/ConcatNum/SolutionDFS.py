@@ -22,8 +22,8 @@ import os,sys
 
 sys.setrecursionlimit(10000)
 
-stdin = open(os.path.join(sys.path[0],'input4.in'),'r')
-sys.stdout = open(os.path.join(sys.path[0],'output4.in'),'w+')
+stdin = open(os.path.join(sys.path[0],'input5.in'),'r')
+sys.stdout = open(os.path.join(sys.path[0],'output5.in'),'w+')
 
 def isConcatenated(hashset,number,index):
 

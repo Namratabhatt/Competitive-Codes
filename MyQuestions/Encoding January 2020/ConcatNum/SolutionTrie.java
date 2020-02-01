@@ -3,7 +3,7 @@ import java.util.Arrays;
 import java.util.*;
 import java.io.*;
 
-class SolutionTrie{
+class Main{
 
     public static void solve(String[] numbers) {
         Trie root = new Trie();
@@ -17,8 +17,7 @@ class SolutionTrie{
             if( search(root, numbers[i], 0, 0) )
                 resultList.add(numbers[i]);
 
-        for(int i = 0;i<resultList.size();i++)
-            System.out.print(resultList.get(i)+" ");
+        System.out.println(resultList.size());
     }
     
     public static void buildTrie(Trie root, String number) {
@@ -32,7 +31,6 @@ class SolutionTrie{
         current.isNumber = true;
     }
     
-    // num represent the number of words that current word can be comprised of
     public static boolean search(Trie root, String number, int begin, int num) {
         Trie current = root;
         for(int i = begin; i < number.length(); i++) {
@@ -46,8 +44,6 @@ class SolutionTrie{
         return num >= 1 && current.isNumber;
     }
     
-    
-
     public static void main(String args[]){
         Scanner sc = new Scanner(System.in);
         int n;

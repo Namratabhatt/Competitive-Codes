@@ -23,8 +23,8 @@ import os,sys
 sys.setrecursionlimit(10000)
 
 
-stdin = open(os.path.join(sys.path[0],'input5.in'),'r')
-sys.stdout = open(os.path.join(sys.path[0],'output5.in'),'w+')
+stdin = open(os.path.join(sys.path[0],'input6.in'),'r')
+sys.stdout = open(os.path.join(sys.path[0],'output6.in'),'w+')
 
 class Trie:
     def __init__(self):

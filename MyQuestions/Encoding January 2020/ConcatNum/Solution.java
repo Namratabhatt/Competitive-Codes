@@ -3,7 +3,7 @@ import java.util.Arrays;
 import java.util.*;
 import java.io.*;
 
-class Solution{
+class Main{
 
     public static void solve(String []input){
         List<String> concatenated = new ArrayList<>();
@@ -14,18 +14,18 @@ class Solution{
         }
 
         for(String word:input){
-            if(isConcatenated(hashset,word)) 
+            if(isValidSubstring(hashset,word)) 
                 concatenated.add(word);
         }
 
         System.out.println(concatenated.size());
     }
 
-    public static boolean isConcatenated(Set<String> hashset, String word){
+    public static boolean isValidSubstring(Set<String> hashset, String word){
         for (int i = 1; i < word.length(); i++) {
             if (hashset.contains(word.substring(0, i))) {
                 String rightStr = word.substring(i);
-                if (hashset.contains(rightStr) || isConcatenated(hashset, rightStr))
+                if (hashset.contains(rightStr) || isValidSubstring(hashset, rightStr))
                     return true;
             }
         }

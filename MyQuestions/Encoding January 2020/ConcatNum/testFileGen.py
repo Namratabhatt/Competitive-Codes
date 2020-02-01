@@ -19,17 +19,23 @@ total = 0
 
 import os,sys
 
-sys.stdout = open(os.path.join(sys.path[0],"input4.in"),'w+')
+sys.stdout = open(os.path.join(sys.path[0],"input6.in"),'w+')
 
 digits = ['1','12','134','55','23','100']
 
 number = ""
-while(len(number)<10000):
-    number+=choice(digits)
+total = 0
+while(total<1000000):
 
-digits.append(number)
-number+="7"
-digits.append(number)
+    while(len(number)<10000):
+        number+=choice(digits)
+    
+    
+    digits.append(number)
+    number+=str(randint(1,9))
+    total+=len(number)
+    digits.append(number)
 
+digits.pop()
 print(len(digits))
 print(*digits)
