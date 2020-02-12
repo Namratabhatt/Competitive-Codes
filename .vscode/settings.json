@@ -1,5 +1,8 @@
 {
     "files.associations": {
-        "string": "cpp"
+        "string": "cpp",
+        "*.cpp":"cpp",
+        "*.java":"java",
+        "*.py":"python"
     }
 }

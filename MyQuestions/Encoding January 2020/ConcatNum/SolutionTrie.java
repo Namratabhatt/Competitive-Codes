@@ -55,6 +55,7 @@ class Main{
             input[i] = sc.next();
         }
         solve(input);
+        sc.close();
     }
 
 }
