@@ -1,0 +1,9 @@
+You are given following two kinds of queries:
+
+i. 1 x - where 1 stands for query of type 1 and x is an integer which needs to be inserted into a list.
+ii. 2 k - where 2 stands for query of type 2 and k is an integer. 
+
+For every query of type 2 you will have to print the product of the lask k numbers in the list.
+
+it is garunteed that every time a query of type 2 is passed, the length of the list is larger than k.
+
