@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - ECFBP203",
+            "request": "launch",
+            "mainClass": "ECFBP203",
+            "projectName": "Competitive-Codes_545f5694"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - Solution",
             "request": "launch",
             "mainClass": "Solution",

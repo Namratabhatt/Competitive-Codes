@@ -1,9 +1,10 @@
-You are given following two kinds of queries:
+Imran has many friends. But all his friends live in different cities. 
+He wants to visit the maximum number of them. However there is a catch. 
 
-i. 1 x - where 1 stands for query of type 1 and x is an integer which needs to be inserted into a list.
-ii. 2 k - where 2 stands for query of type 2 and k is an integer. 
+All the cities that his friends live in are arranged in form of a square. A city can have more than one friends. He wants to visit the 
+maximum number of his friends. But in the grid of the cities, he can only travel once diagonally(Right diagonal). Also he can teleport 
+between the cities belonging to the same diagonal. There is one more catch though. He can only visit a city in which the number of friends
+is more than or equal to the number of friends in the city he previously visited.
 
-For every query of type 2 you will have to print the product of the lask k numbers in the list.
-
-it is garunteed that every time a query of type 2 is passed, the length of the list is larger than k.
+Your work is to print the row and column indexes of the cities that he needs to visit so that he can visit maximum number of his friends. 
 
