@@ -1,0 +1,14 @@
+#!bin/bash
+
+folder=$1
+number=$2
+file="Problem"
+
+mkdir $folder
+cd $folder
+
+for (( i=0; i<$number ;i++))
+do
+	mkdir $file$i
+	cp '/mnt/1A121547121528F1/LetsCode/Competitive-Codes/pythonTemplate.py' . 
+done
